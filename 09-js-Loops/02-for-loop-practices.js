@@ -83,7 +83,7 @@ const { getRandomNumber } = require('../utils/MathHelper.js');
 
 let r1 = getRandomNumber (10, 20);
 
-for (let i = 1; i <= r1; i += 2) {
+for (let i = 10; i <= r1; i += 2) {
 console.log(i) ;
  }
 
