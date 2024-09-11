@@ -78,7 +78,7 @@ const car = {
     }
   };
   
-  car.drive(); // '2024 Tesla Y drives well!'
+  car1.drive(); // '2024 Tesla Y drives well!'
   console.log(car.getPrice()); //
   console.log(car.getDiscountedPrice()); //
 

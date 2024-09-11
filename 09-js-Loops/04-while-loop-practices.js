@@ -14,7 +14,7 @@ while (i <= 50) { // while
     i++;
 }
  // or
- let i = 0;
+ let i2 = 0;
   while(i <= 50) {
     console.log(i);
     i += 2;

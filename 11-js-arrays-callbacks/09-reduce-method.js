@@ -112,6 +112,6 @@ const objects = [ 'Remote', 'Computer', 'TV', 'Mouse', 'Notebook', 'AC' ];
 let shortestObject = objects.reduce((acc, curr) => {
   if(curr.length < acc.length) return curr;
   return acc;
-});
+}, objects[0]);
 
 console.log(shortestObject); // AC
