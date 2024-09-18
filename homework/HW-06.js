@@ -286,9 +286,7 @@ console.log('\n---------------TASK10---------------\n');
 function isDateFormatValid(Str) {
     const Requirement = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     const match = Str.trim().match(Requirement);
-    if (!match) {
-        return false;
-    }
+    if (!match)  return false;
     return true;
 }
 
