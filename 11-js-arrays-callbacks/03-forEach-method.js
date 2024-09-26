@@ -11,7 +11,7 @@ console.log('\n--------iteration of arrays with for loop--------\n');
 
 for(let i = 0; i < names.length; i++) {
   console.log(names[i]);
-}
+} let sum = 0;
 
 
 console.log('\n--------iteration of arrays with forEach method--------\n');

@@ -75,7 +75,7 @@ const car = {
     }
     info: function() {
         
-    }
+    },
   };
   
   car1.drive(); // '2024 Tesla Y drives well!'

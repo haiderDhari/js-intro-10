@@ -128,7 +128,9 @@ function middleInt(n1, n2, n3) {
   if(max === n1 && min === n2) return n3;
   if(max === n2 && min === n3) return n1;
   if(max === n3 && min === n1) return n2;
-  }
+  
+   }
+  
 
 
 console.log(middleInt(1, 2, 2));

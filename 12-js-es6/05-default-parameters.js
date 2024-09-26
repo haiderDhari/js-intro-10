@@ -12,7 +12,7 @@ function multiply(num1, num2 = 1) {
   }
   
   console.log(sum(5, 10)); // 15
-  console.log(sum(7)); // 7
+  console.log(sum(7)); // 8
   
   
   function setBrowser(browserName = 'chrome') {
