@@ -249,15 +249,16 @@ removeDuplicates(["1", "2", "3", "2", "3"])  -> ["1", "2", "3"]
 */ 
 console.log('\n---------------TASK09---------------\n');
 
-
-function removeDuplicates(arr) {
-    return arr.map(Element => {
-        if (Element === Element) {
-            return Element; 
-        } 
-        Element;
-    });
-}
+const removeDuplicates = (arr) => {
+    let result = [];
+  
+    arr.forEach(i => {
+      if(!result.includes(i)) result.push(i)
+    })
+  
+    return result;
+  }
+ 
 console.log(removeDuplicates([1, 2, 5, 2, 3]));
 console.log(removeDuplicates([0, -1, -2, -2, -1]));
 console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));

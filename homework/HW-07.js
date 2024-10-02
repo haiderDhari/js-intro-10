@@ -162,6 +162,7 @@ function sumOfDigits(str) {
   return sum;
 }
 
+
 console.log(sumOfDigits("Javascript"));
 console.log(sumOfDigits("John's age is 29"));
 console.log(sumOfDigits("$125.0"));
