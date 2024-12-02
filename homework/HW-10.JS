@@ -12,7 +12,24 @@ calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 })  -> 19.12
 calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 })  -> 0
 calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango:1 })  -> 12.24 */
 console.log('\n---------------TASK01---------------\n');
+/*
+const calculateTotalPrice1 = items => {
+    const prices = {
+        apple: 2.00,
+        orange: 3.29,
+        mango: 4.99,
+        pineapple: 5.25
+    };
+  
+    let total = 0;
+    for (let item in items) {
+       total += prices[item] * items[item]
+    }
+    return total
+}
 
+
+*/
 
 function calculateTotalPrice1(items) {
     const prices = {
@@ -54,7 +71,31 @@ calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 })  -> 0
 calculateTotalPrice1({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 })  -> 29.51
 */
 console.log('\n---------------TASK02---------------\n');
+/*   
+const calculateTotalPrice2 = items => {
+  const prices = {
+      Apple: 2.00,
+      Orange: 3.29,
+      Mango: 4.99,
+      Pineapple: 5.25
+  };
+  let total = 0;
 
+  for(let item in items){
+
+      const noSale = items[item] * prices[item]
+      let sale = 0;
+
+      if(item === 'Apple') sale = (Math.floor(items[item] / 2) * prices[item]) / 2
+      else if(item === 'Mango') sale = (Math.floor(items[item] / 4) * prices[item])
+          
+      total += noSale - sale;
+      
+  }
+  return total === 0 ? total : total.toFixed(2)
+}
+
+*/
 
 function calculateTotalPrice2(items) {
     const prices = {
@@ -114,7 +155,10 @@ nthWord("Javascript", 1)  -> "Javascript”
 nthWord("", 1)  -> ""
 */
 console.log('\n---------------TASK03---------------\n');
+/*
+const nthWord = (str, num) =>  str.split(' ')[num-1] || ""
 
+*/
 function nthWord(str, n) {
     const words = str.trim().split(' ');
 
@@ -157,6 +201,10 @@ isArmstrong(153)  -> true
 isArmstrong(1111)  -> false
 */
 console.log('\n---------------TASK04---------------\n');
+/*
+const isArmstrong = num => num.toFixed().split('').reduce((total, i) => total + Math.pow(i,num.toFixed().length), 0) === num
+
+*/
 
 function isArmstrong(num) {
     const digits = num.toString();
@@ -197,6 +245,16 @@ reverseNumber(0)  -> 0
 reverseNumber(111)  -> 111
 */
 console.log('\n---------------TASK05---------------\n');
+/*
+const reverseNumber = num => {
+    let reversed = 0;
+    for(let i = num; i > 0;  i = Math.floor(i / 10)){
+        reversed = (reversed * 10) + (i % 10);
+    }
+    return reversed;
+}
+
+*/
 
 function reverseNumber(num) {
     let reversed = 0;
@@ -232,7 +290,10 @@ doubleOrTriple([0], false)  -> [0]
 doubleOrTriple([-1, 0, 1], true)  -> [-2, 0, 2]
 */
 console.log('\n---------------TASK06---------------\n');
+/*
+const doubleOrTriple = (arr, isDouble) => isDouble ? arr.map((el) => el * 2) : arr.map((el) => el * 3)
 
+*/
 function doubleOrTriple(arr, shouldDouble) {
     return arr.map(num => shouldDouble ? num * 2 : num * 3);
 }
@@ -258,7 +319,10 @@ splitString("Hello", 6)  -> ""
 splitString("12", 1)  -> "1 2"
 */
 console.log('\n---------------TASK07---------------\n');
+/*
+const splitString = (str, num) => (str.length % num !== 0 || num > str.length) ? '' : str.slice(0, num) + ' ' + str.slice(num)
 
+*/
 function splitString(str, num) {
     if (str.length < num || str.length % num !== 0) {
         return ""; 
