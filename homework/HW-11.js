@@ -1,4 +1,4 @@
-/* in Java Script
+/* 
 Requirement:
 Write a function named countPalindrome() which takes a string and returns 
 the number of  palindrome words.
