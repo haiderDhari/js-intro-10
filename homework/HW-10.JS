@@ -275,7 +275,7 @@ console.log(reverseNumber(123));
 console.log(reverseNumber(12)); 
 console.log(reverseNumber(0)); 
 console.log(reverseNumber(111));
-console.log(reverseNumber(-456));
+
 
 /*
 Requirement:

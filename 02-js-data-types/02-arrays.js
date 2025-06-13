@@ -49,13 +49,14 @@ const user = {
     email: 'haiderdhari@gmail.com',
     phone: '000-000-0000'
 };
+console.log(user);
 
-const user = {
+const user1 = {
     firstName: 'haider',
     age: 35,
     city: 'baghdad'
 };
-console.log(user);
+console.log(user1);
 
 
 

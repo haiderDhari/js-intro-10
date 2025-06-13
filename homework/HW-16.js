@@ -15,7 +15,7 @@ console.log('\n---------------TASK01---------------\n');
 
 function toInitials(name) {
     const nameParts = name.split(' ');
-
+     v  
     const initials = nameParts.map(part => part.charAt(0).toUpperCase() + '.');
 
     return initials.join(' ');

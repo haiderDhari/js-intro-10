@@ -9,6 +9,7 @@ console.log(num1,typeof num2);
 
 let isRainy = 'falls';
 console.log(typeof isRainy);
+
 let age = 3===3;
 console.log(age);
 let firstname = 'haider';

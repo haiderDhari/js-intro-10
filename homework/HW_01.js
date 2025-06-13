@@ -67,7 +67,7 @@ console.log('\n---------------TASK07---------------\n');
 
 let i1 = 7;
 let i2 = 11;
-console.log('The average of the numbers is:'+((i1 + i2) /2));
+console.log(((i1 + i2) /2));
 
 
 console.log('\n---------------TASK08---------------\n');
