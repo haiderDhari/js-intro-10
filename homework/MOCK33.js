@@ -134,15 +134,146 @@ console.log(firstDuplicate([123, 'abc', '123', 3, 'abc']));
 console.log(firstDuplicate([1, 2, 3]));
 console.log(firstDuplicate(['foo', 'abc', '123', 'bar']));
 
+/*6
+Find All Duplicate Elements 
+Write a function named as getDuplicates() which takes an array argument and returns all the 
+duplicated elements in the array when invoked. 
+NOTE: Make your code dynamic that works for any array and return empty array if there are no 
+duplicates in the array. For two elements to be considered as duplicated, value and data types 
+of the elements must be same. 
+Examples: 
+getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])    
+getDuplicates([ 1, 2, 5, 0, 7 ])      
+getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])   
+getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])    
+Reverse String Words -> [ 0, -7 ] -> [ ] -> [ 'foo', 'a’ ]
+*/
 
+function getDuplicates(arr) {
+    let arr1 = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !arr1.includes(arr[i])) arr1.push(arr[i]);
+        }
 
+    }
+    return arr1;
+}
 
+console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
+console.log(getDuplicates([1, 2, 5, 0, 7]));
+console.log(getDuplicates(['A', 'foo', '12', 12, 'bar', 'a', 'a', 'foo']));
+console.log(getDuplicates(['foo', '12', 12, 'bar', 'a']));
 
+/*7
+Reverse String Words 
+Write a function named as reverseStringWords() which takes a string as an argument and 
+returns string back with each word separately reversed when invoked. 
+NOTE: Make your code dynamic that works for any string. Make sure you consider extra spaces 
+before and after words in the given string. 
+ 
+Examples: 
+reverseStringWords("Hello World")      -> "olleH dlroW" 
+reverseStringWords("I like JavaScript")     -> "I ekil tpircSavaJ" 
+reverseStringWords("Hello")       -> "olleH" 
+reverseStringWords("")         -> "" 
+reverseStringWords(" ")         -> ""
+*/
 
+function reverseStringWords(str) {
+    return str.trim().split(' ').map(word => word.split('').reverse().join('')).join(' ');
+}
 
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(""));
+console.log(reverseStringWords(" "));
 
+/*8
+Add Two Arrays 
+Write a function named add() which takes two array of numbers as argument and returns a new 
+array with sum of given arrays elements. 
+NOTE: Be careful about the array sizes as they could be different. 
+ 
+Examples: 
+add([3, 0, 0, 7, 5, 10], [6, 3, 2])         -> [9, 3, 2, 7, 5, 10] 
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])     -> [16, 11, 9,  3, 2, 7, 5, 10, 34] 
+add([-5, 6, -3, 11], [5, -6, 3, -11])         -> [0, 0, 0, 0]
+*/
+function add(arr1, arr2) {
+    if (arr2.length > arr1.length) [arr1, arr2] = [arr2, arr1];
+    for (let i = 0; i < arr2.length; i++) {
+        arr1[i] += arr2[i];
+    }
+    return arr1
+}
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));
 
+/*9
+Fizz Buzz 
+Write a function named fizzBuzz() which takes a number argument and returns an array 
+consisting of numbers starting from 1 to given number. However, it will return "Fizz" for the 
+numbers divided by 3, "Buzz" for the numbers divided by 5, and "FizzBuzz" for the numbers 
+divided both by 3 and 5. 
+Examples: 
+fizzBuzz(3) 
+fizzBuzz(5) -> [ 1, 2, 'Fizz' ] -> [ 1, 2, 'Fizz', 4, 'Buzz' ] 
+fizzBuzz(10) -> [ 1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz' ] 
+fizzBuzz(15) -> [ 1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz'. 13, 14,  'FizzBuzz' ] 
+fizzBuzz(2) -> [ 1, 2 ] 
+*/
+function fizzBuzz(n) {
+    const result = [];
 
+    for (let i = 1; i <= n; i++) {
+        if (i % 15 === 0) {
+            result.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+            result.push("Fizz");
+        } else if (i % 5 === 0) {
+            result.push("Buzz");
+        } else {
+            result.push(i);
+        }
+    }
+
+    return result;
+}
+console.log(fizzBuzz(3));  // [1, 2, 'Fizz']
+console.log(fizzBuzz(5));  // [1, 2, 'Fizz', 4, 'Buzz']
+console.log(fizzBuzz(10)); // [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz']
+console.log(fizzBuzz(15)); // [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']
+console.log(fizzBuzz(2));  // [1, 2]
+
+/*10
+Palindrome 
+Write a function named as isPalindrome() which takes a string word as an argument and 
+returns true if the word is palindrome or returns false otherwise when invoked. 
+NOTE: Palindrome: It is a word that is read the same backward as forward 
+Examples: kayak, civic, madam 
+NOTE: your function should ignore case sensitivity 
+Examples: 
+isPalindrome("Hello")   -> false 
+isPalindrome("Kayak")   -> true 
+isPalindrome("civic")   -> true 
+isPalindrome("abba")   -> true 
+isPalindrome("ab  a")   -> false 
+isPalindrome("123454321")   -> true 
+isPalindrome("A")   -> true 
+isPalindrome("")   -> true */
+const isPalindrome = (str) => str.toLowerCase() === str.toLowerCase().split('').reverse().join('');
+
+console.log(isPalindrome("Hello") );
+console.log(isPalindrome("Kayak"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("ab  a"));
+console.log(isPalindrome("123454321"));
+console.log(isPalindrome("A"));
+console.log(isPalindrome(""));
 
 
 
